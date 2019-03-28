@@ -1,5 +1,7 @@
 import numpy as np
 import cv2
+import os
+import psutil
 
 
 class Config:
@@ -323,3 +325,10 @@ def rpn_to_roi(rpn_layer, regr_layer, C, dim_ordering, use_regr=True, max_boxes=
         all_boxes, all_probs, overlap_thresh=overlap_thresh, max_boxes=max_boxes)[0]
 
     return result
+
+
+def current_ram():
+    process = psutil.Process(os.getpid())
+    ram = process.memory_info().rss / 1000000
+
+    return str(int(ram)) + " MB"

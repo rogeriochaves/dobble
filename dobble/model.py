@@ -6,6 +6,7 @@ from keras import backend as K
 from timeit import default_timer as timer
 from dobble.network import nn_base, rpn_layer, classifier_layer
 from dobble.utilities import format_img, non_max_suppression_fast, rpn_to_roi
+from timeit import default_timer as timer
 
 
 def build(C):
@@ -44,6 +45,7 @@ def build(C):
 
 
 def predict(C, model_rpn, model_classifier_only, img_path):
+    start = timer()
     # Prediction
     # Config
     bbox_threshold = 0.5
@@ -58,10 +60,7 @@ def predict(C, model_rpn, model_classifier_only, img_path):
 
     X = np.transpose(X, (0, 2, 3, 1))
 
-    start = timer()
     [Y1, Y2, F] = model_rpn.predict(X)
-    end = timer()
-    print("Time spent model_rpn predict:", end - start)
 
     R = rpn_to_roi(Y1, Y2, C, K.image_dim_ordering(), overlap_thresh=0.7)
     # convert from (x1,y1,x2,y2) to (x,y,w,h)
@@ -86,10 +85,7 @@ def predict(C, model_rpn, model_classifier_only, img_path):
             ROIs_padded[0, curr_shape[1]:, :] = ROIs[0, 0, :]
             ROIs = ROIs_padded
 
-        # start = timer()
         [P_cls, _] = model_classifier_only.predict([F, ROIs])
-        # end = timer()
-        # print("Time spent model_classifier predict:", end - start)
 
         for ii in range(P_cls.shape[1]):
             # Ignore 'bg' class
@@ -117,4 +113,6 @@ def predict(C, model_rpn, model_classifier_only, img_path):
         for jk in range(new_boxes.shape[0]):
             all_dets.append((key, 100 * new_probs[jk]))
 
+    end = timer()
+    print("Prediction time:", end - start)
     return all_dets
