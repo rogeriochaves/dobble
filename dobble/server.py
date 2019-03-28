@@ -1,13 +1,23 @@
 import tornado.ioloop
 import tornado.web
 import os
+import uuid
 
 
 def main_handler(predict):
     class MainHandler(tornado.web.RequestHandler):
-        def get(self):
-            # title = self.get_arguments("title")[0]
-            predictions = predict('custom_pics/IMG_3515.jpg')
+        def post(self):
+            fileinfo = self.request.files['photo'][0]
+            print("fileinfo is", fileinfo)
+            fname = fileinfo['filename']
+            extn = os.path.splitext(fname)[1]
+            cname = str(uuid.uuid4()) + extn
+            filepath = '/tmp/' + cname
+            with open(filepath, 'wb') as out:
+                body = fileinfo['body']
+                out.write(body)
+            print("Uploaded to", filepath)
+            predictions = predict(filepath)
 
             self.finish({'predictions': predictions})
     return MainHandler

@@ -10,4 +10,14 @@ takePicture.onchange = function(event) {
   formData.append("photo", photo);
   req.open("POST", "/predict");
   req.send(formData);
+
+  req.onload = function() {
+    if (req.status >= 200 && req.status < 400) {
+      // Success!
+      var data = JSON.parse(req.responseText);
+      document.getElementById("result").textContent = req.responseText;
+    } else {
+      // We reached our target server, but it returned an error
+    }
+  };
 };
