@@ -4,11 +4,16 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Dobble</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=1"
+    />
+    <meta name="mobile-web-app-capable" content="yes" />
   </head>
   <body>
-    <h1>Hello World!</h1>
-    <input type="file" id="take-picture" accept="image/*" />
+    <h1>Dobble</h1>
+    <video id="video" width="360" height="480" playsinline autoplay></video>
+    <canvas id="canvas" style="display: none"></canvas>
     <div id="result"></div>
 
     <script src="main.js"></script>

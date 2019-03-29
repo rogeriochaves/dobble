@@ -3,3 +3,4 @@ keras==2.2.4
 opencv-python==3.4.3.18
 numpy
 tornado
+psutil

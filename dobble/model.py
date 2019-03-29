@@ -69,7 +69,8 @@ def predict(C, model_rpn, model_classifier_only, img_path):
 
     bboxes = {}
     probs = {}
-    max_checks = 15  # R.shape[0] // C.num_rois + 1
+    max_checks = 15
+    max_checks = R.shape[0] // C.num_rois + 1
     for jk in range(max_checks):
         ROIs = np.expand_dims(
             R[C.num_rois * jk:C.num_rois * (jk + 1), :], axis=0)
@@ -104,15 +105,24 @@ def predict(C, model_rpn, model_classifier_only, img_path):
                                      C.rpn_stride * (x + w), C.rpn_stride * (y + h)])
             probs[cls_name].append(np.max(P_cls[0, ii, :]))
 
-    all_dets = []
+    all_dets = {}
     for key in bboxes:
         bbox = np.array(bboxes[key])
 
         new_boxes, new_probs = non_max_suppression_fast(
             bbox, np.array(probs[key]), overlap_thresh=0.2)
         for jk in range(new_boxes.shape[0]):
-            all_dets.append((key, 100 * new_probs[jk]))
+            if key not in all_dets:
+                all_dets[key] = []
+            all_dets[key].append(100 * new_probs[jk])
+    result = []
+    for key in all_dets:
+        result.append({"key": key, "chances": all_dets[key]})
+
+    def most_chances(elem):
+        return len(elem["chances"]) + sum(elem["chances"])
+    result.sort(key=most_chances, reverse=True)
 
     end = timer()
     print("Prediction time:", end - start)
-    return all_dets
+    return result

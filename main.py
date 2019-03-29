@@ -23,5 +23,5 @@ predict = partial(model.predict, C, model_rpn, model_classifier_only)
 if "--server" in sys.argv:
     server.start(predict)
 else:
-    result = predict('custom_pics/IMG_3515.jpg')
+    result = predict('custom_pics/IMG_3430.jpg')
     print(result)
