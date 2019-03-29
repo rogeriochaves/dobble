@@ -69,8 +69,9 @@ def predict(C, model_rpn, model_classifier_only, img_path):
 
     bboxes = {}
     probs = {}
-    max_checks = 15
+    # max_checks = 15
     max_checks = R.shape[0] // C.num_rois + 1
+    max_checks //= 2
     for jk in range(max_checks):
         ROIs = np.expand_dims(
             R[C.num_rois * jk:C.num_rois * (jk + 1), :], axis=0)
