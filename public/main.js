@@ -19,13 +19,13 @@ let loading = false;
 const shoot = () => {
   start = performance.now();
   loading = true;
-  debugInfo.textContent = "Loading...";
+  if (!auto) debugInfo.textContent = "Loading...";
 
   canvas.width = video.videoWidth / 2;
   canvas.height = video.videoHeight / 2;
   canvas.getContext("2d").drawImage(video, 0, 0, canvas.width, canvas.height);
   // const img = canvas.toDataURL("image/png");
-  const img = canvas.toDataURL("image/jpeg", 0.6).split(",")[1];
+  const img = canvas.toDataURL("image/jpeg", 0.7).split(",")[1];
 
   uploadImage(img);
 };
@@ -57,11 +57,8 @@ const uploadImage = img => {
 
       const end = performance.now();
       const wallclock = Math.round((end - start) / 10) / 100;
-      if (predictions[0] && predictions[0].chances.length > 1) {
-        result.innerHTML = predictions[0].key;
-      } else {
-        result.innerHTML = "";
-      }
+      const duplicates = predictions.filter(p => p.chances.length > 1);
+      result.innerHTML = duplicates.map(p => p.key).join(", ");
       debugInfo.innerHTML = formatted + "<br/>time:" + wallclock + " seconds";
     } else {
       debugInfo.innerHTML = "Error";

@@ -26,7 +26,7 @@ def main_handler(predict, remote_predictions=True):
                 shared['result'] = None
                 start = time.clock()
                 while not shared['result']:
-                    if (time.clock() - start) > 5:
+                    if (time.clock() - start) >= 2:
                         raise Exception('timeout')
                 self.finish(shared['result'])
             else:
