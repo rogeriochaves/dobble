@@ -11,10 +11,23 @@
     <meta name="mobile-web-app-capable" content="yes" />
   </head>
   <body>
-    <h1>Dobble</h1>
     <video id="video" width="360" height="480" playsinline autoplay></video>
+    <div
+      id="result"
+      style="color:#F00; font-size: 36px; width: 100%; padding: 10px 0; text-align: center; margin-top: -60px; position: absolute"
+    >
+      <span id="result" style="background-color: #FFF"></span>
+    </div>
     <canvas id="canvas" style="display: none"></canvas>
-    <div id="result"></div>
+    <button id="click-area" style="width: 100%; height: 50px">Shoot</button>
+    <label
+      for="auto-shot"
+      style="padding: 20px; font-size: 18px; display: block;"
+    >
+      <input type="checkbox" id="auto-shot" />
+      Auto Shot
+    </label>
+    <div id="debug-info"></div>
 
     <script src="main.js"></script>
   </body>

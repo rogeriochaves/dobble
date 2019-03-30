@@ -2,6 +2,10 @@ const video = document.getElementById("video");
 const canvas = document.getElementById("canvas");
 const context = canvas.getContext("2d");
 const result = document.getElementById("result");
+const debugInfo = document.getElementById("debug-info");
+const clickArea = document.getElementById("click-area");
+const autoShot = document.getElementById("auto-shot");
+let auto = false;
 
 navigator.mediaDevices
   .getUserMedia({ video: { facingMode: "environment" } })
@@ -11,17 +15,28 @@ navigator.mediaDevices
   .catch(err => alert(err));
 
 let start;
-video.addEventListener("click", function() {
+let loading = false;
+const shoot = () => {
   start = performance.now();
-  result.textContent = "Loading...";
+  loading = true;
+  debugInfo.textContent = "Loading...";
 
-  canvas.width = video.videoWidth;
-  canvas.height = video.videoHeight;
+  canvas.width = video.videoWidth / 2;
+  canvas.height = video.videoHeight / 2;
   canvas.getContext("2d").drawImage(video, 0, 0, canvas.width, canvas.height);
   // const img = canvas.toDataURL("image/png");
-  const img = canvas.toDataURL("image/jpeg", 0.9).split(",")[1];
+  const img = canvas.toDataURL("image/jpeg", 0.6).split(",")[1];
 
   uploadImage(img);
+};
+
+clickArea.addEventListener("click", shoot);
+
+autoShot.addEventListener("change", function() {
+  auto = !auto;
+  if (auto && !loading) {
+    shoot();
+  }
 });
 
 const uploadImage = img => {
@@ -33,6 +48,7 @@ const uploadImage = img => {
   req.send(formData);
 
   req.onload = function() {
+    loading = false;
     if (req.status >= 200 && req.status < 400) {
       const predictions = JSON.parse(req.responseText).predictions;
       const formatted = predictions
@@ -41,9 +57,21 @@ const uploadImage = img => {
 
       const end = performance.now();
       const wallclock = Math.round((end - start) / 10) / 100;
-      result.innerHTML = formatted + "<br/>time:" + wallclock + " seconds";
+      if (predictions[0] && predictions[0].chances.length > 1) {
+        result.innerHTML = predictions[0].key;
+      } else {
+        result.innerHTML = "";
+      }
+      debugInfo.innerHTML = formatted + "<br/>time:" + wallclock + " seconds";
     } else {
-      // We reached our target server, but it returned an error
+      debugInfo.innerHTML = "Error";
     }
+    if (auto) shoot();
+  };
+
+  req.onerror = function() {
+    loading = false;
+    debugInfo.innerHTML = "Error";
+    if (auto) shoot();
   };
 };
