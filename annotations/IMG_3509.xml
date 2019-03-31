@@ -1,25 +1,12 @@
 <annotation>
     <folder>custom_pics</folder>
-    <filename>IMG_3445.jpg</filename>
+    <filename>IMG_3509.jpg</filename>
     <size>
-        <width>1048</width>
-        <height>1398</height>
+        <width>3024</width>
+        <height>4032</height>
         <depth>3</depth>
     </size>
     <segmented>0</segmented>
-    <object>
-        <name>sunglasses</name>
-        <pose>Unspecified</pose>
-        <truncated>0</truncated>
-        <occluded>0</occluded>
-        <difficult>0</difficult>
-        <bndbox>
-            <xmin>292</xmin>
-            <ymin>503</ymin>
-            <xmax>553</xmax>
-            <ymax>844</ymax>
-        </bndbox>
-    </object>
     <object>
         <name>dobble</name>
         <pose>Unspecified</pose>
@@ -27,88 +14,101 @@
         <occluded>0</occluded>
         <difficult>0</difficult>
         <bndbox>
-            <xmin>116</xmin>
-            <ymin>566</ymin>
-            <xmax>321</xmax>
-            <ymax>742</ymax>
+            <xmin>1344</xmin>
+            <ymin>2079</ymin>
+            <xmax>2284</xmax>
+            <ymax>3168</ymax>
         </bndbox>
     </object>
     <object>
-        <name>question mark</name>
+        <name>tree</name>
         <pose>Unspecified</pose>
         <truncated>0</truncated>
         <occluded>0</occluded>
         <difficult>0</difficult>
         <bndbox>
-            <xmin>221</xmin>
-            <ymin>874</ymin>
-            <xmax>348</xmax>
-            <ymax>1010</ymax>
+            <xmin>841</xmin>
+            <ymin>2507</ymin>
+            <xmax>1379</xmax>
+            <ymax>3062</ymax>
         </bndbox>
     </object>
     <object>
-        <name>scissors</name>
+        <name>locker</name>
         <pose>Unspecified</pose>
         <truncated>0</truncated>
         <occluded>0</occluded>
         <difficult>0</difficult>
         <bndbox>
-            <xmin>418</xmin>
-            <ymin>783</ymin>
-            <xmax>690</xmax>
-            <ymax>1132</ymax>
+            <xmin>626</xmin>
+            <ymin>1131</ymin>
+            <xmax>1470</xmax>
+            <ymax>1876</ymax>
         </bndbox>
     </object>
     <object>
-        <name>hammer</name>
+        <name>green apple</name>
         <pose>Unspecified</pose>
         <truncated>0</truncated>
         <occluded>0</occluded>
         <difficult>0</difficult>
         <bndbox>
-            <xmin>667</xmin>
-            <ymin>695</ymin>
-            <xmax>900</xmax>
-            <ymax>991</ymax>
+            <xmin>732</xmin>
+            <ymin>1918</ymin>
+            <xmax>1217</xmax>
+            <ymax>2388</ymax>
         </bndbox>
     </object>
     <object>
-        <name>zebra</name>
+        <name>snowman</name>
         <pose>Unspecified</pose>
         <truncated>0</truncated>
         <occluded>0</occluded>
         <difficult>0</difficult>
         <bndbox>
-            <xmin>596</xmin>
-            <ymin>509</ymin>
-            <xmax>766</xmax>
-            <ymax>708</ymax>
+            <xmin>2055</xmin>
+            <ymin>2105</ymin>
+            <xmax>2555</xmax>
+            <ymax>2434</ymax>
         </bndbox>
     </object>
     <object>
-        <name>car</name>
+        <name>web</name>
         <pose>Unspecified</pose>
         <truncated>0</truncated>
         <occluded>0</occluded>
         <difficult>0</difficult>
         <bndbox>
-            <xmin>290</xmin>
-            <ymin>361</ymin>
-            <xmax>455</xmax>
-            <ymax>508</ymax>
+            <xmin>1391</xmin>
+            <ymin>1658</ymin>
+            <xmax>1771</xmax>
+            <ymax>2035</ymax>
         </bndbox>
     </object>
     <object>
-        <name>turtle</name>
+        <name>cat</name>
         <pose>Unspecified</pose>
         <truncated>0</truncated>
         <occluded>0</occluded>
         <difficult>0</difficult>
         <bndbox>
-            <xmin>779</xmin>
-            <ymin>484</ymin>
-            <xmax>872</xmax>
-            <ymax>641</ymax>
+            <xmin>1853</xmin>
+            <ymin>1468</ymin>
+            <xmax>2450</xmax>
+            <ymax>1976</ymax>
+        </bndbox>
+    </object>
+    <object>
+        <name>bomb</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <occluded>0</occluded>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>1609</xmin>
+            <ymin>1086</ymin>
+            <xmax>1920</xmax>
+            <ymax>1496</ymax>
         </bndbox>
     </object>
 </annotation>

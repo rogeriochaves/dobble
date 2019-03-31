@@ -1,64 +1,12 @@
 <annotation>
     <folder>custom_pics</folder>
-    <filename>IMG_3445.jpg</filename>
+    <filename>IMG_3516.jpg</filename>
     <size>
-        <width>1048</width>
-        <height>1398</height>
+        <width>3024</width>
+        <height>4032</height>
         <depth>3</depth>
     </size>
     <segmented>0</segmented>
-    <object>
-        <name>sunglasses</name>
-        <pose>Unspecified</pose>
-        <truncated>0</truncated>
-        <occluded>0</occluded>
-        <difficult>0</difficult>
-        <bndbox>
-            <xmin>292</xmin>
-            <ymin>503</ymin>
-            <xmax>553</xmax>
-            <ymax>844</ymax>
-        </bndbox>
-    </object>
-    <object>
-        <name>dobble</name>
-        <pose>Unspecified</pose>
-        <truncated>0</truncated>
-        <occluded>0</occluded>
-        <difficult>0</difficult>
-        <bndbox>
-            <xmin>116</xmin>
-            <ymin>566</ymin>
-            <xmax>321</xmax>
-            <ymax>742</ymax>
-        </bndbox>
-    </object>
-    <object>
-        <name>question mark</name>
-        <pose>Unspecified</pose>
-        <truncated>0</truncated>
-        <occluded>0</occluded>
-        <difficult>0</difficult>
-        <bndbox>
-            <xmin>221</xmin>
-            <ymin>874</ymin>
-            <xmax>348</xmax>
-            <ymax>1010</ymax>
-        </bndbox>
-    </object>
-    <object>
-        <name>scissors</name>
-        <pose>Unspecified</pose>
-        <truncated>0</truncated>
-        <occluded>0</occluded>
-        <difficult>0</difficult>
-        <bndbox>
-            <xmin>418</xmin>
-            <ymin>783</ymin>
-            <xmax>690</xmax>
-            <ymax>1132</ymax>
-        </bndbox>
-    </object>
     <object>
         <name>hammer</name>
         <pose>Unspecified</pose>
@@ -66,49 +14,101 @@
         <occluded>0</occluded>
         <difficult>0</difficult>
         <bndbox>
-            <xmin>667</xmin>
-            <ymin>695</ymin>
-            <xmax>900</xmax>
-            <ymax>991</ymax>
+            <xmin>1563</xmin>
+            <ymin>2387</ymin>
+            <xmax>2144</xmax>
+            <ymax>2816</ymax>
         </bndbox>
     </object>
     <object>
-        <name>zebra</name>
+        <name>cheese</name>
         <pose>Unspecified</pose>
         <truncated>0</truncated>
         <occluded>0</occluded>
         <difficult>0</difficult>
         <bndbox>
-            <xmin>596</xmin>
-            <ymin>509</ymin>
-            <xmax>766</xmax>
-            <ymax>708</ymax>
+            <xmin>1009</xmin>
+            <ymin>2242</ymin>
+            <xmax>1489</xmax>
+            <ymax>2825</ymax>
         </bndbox>
     </object>
     <object>
-        <name>car</name>
+        <name>horse</name>
         <pose>Unspecified</pose>
         <truncated>0</truncated>
         <occluded>0</occluded>
         <difficult>0</difficult>
         <bndbox>
-            <xmin>290</xmin>
-            <ymin>361</ymin>
-            <xmax>455</xmax>
-            <ymax>508</ymax>
+            <xmin>578</xmin>
+            <ymin>1802</ymin>
+            <xmax>1053</xmax>
+            <ymax>2084</ymax>
         </bndbox>
     </object>
     <object>
-        <name>turtle</name>
+        <name>web</name>
         <pose>Unspecified</pose>
         <truncated>0</truncated>
         <occluded>0</occluded>
         <difficult>0</difficult>
         <bndbox>
-            <xmin>779</xmin>
-            <ymin>484</ymin>
-            <xmax>872</xmax>
-            <ymax>641</ymax>
+            <xmin>814</xmin>
+            <ymin>1314</ymin>
+            <xmax>1194</xmax>
+            <ymax>1692</ymax>
+        </bndbox>
+    </object>
+    <object>
+        <name>carrot</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <occluded>0</occluded>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>1032</xmin>
+            <ymin>1769</ymin>
+            <xmax>1864</xmax>
+            <ymax>2218</ymax>
+        </bndbox>
+    </object>
+    <object>
+        <name>maple leaf</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <occluded>0</occluded>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>1971</xmin>
+            <ymin>1882</ymin>
+            <xmax>2321</xmax>
+            <ymax>2232</ymax>
+        </bndbox>
+    </object>
+    <object>
+        <name>anchor</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <occluded>0</occluded>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>1891</xmin>
+            <ymin>1440</ymin>
+            <xmax>2197</xmax>
+            <ymax>1709</ymax>
+        </bndbox>
+    </object>
+    <object>
+        <name>clock</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <occluded>0</occluded>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>1296</xmin>
+            <ymin>1174</ymin>
+            <xmax>1786</xmax>
+            <ymax>1662</ymax>
         </bndbox>
     </object>
 </annotation>
